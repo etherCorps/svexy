@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-    :root {
-        /* For hsl(198deg 93% 60% / <alpha-value>) */
-        --color-primary: #ffb703;
-
-    }
+	:root {
+		/* For hsl(198deg 93% 60% / <alpha-value>) */
+		--color-primary: #ffb703;
+	}
 }
