@@ -11,6 +11,9 @@ const config = {
 		}),
 	],
 	kit: {
+		package: {
+			dir: 'svexy-ui'
+		},
 		adapter: adapter()
 	}
 };
