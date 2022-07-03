@@ -1,7 +1,7 @@
 # Svexy UI
 
 ## Note
-<p>This is a under development project. So, I request everyone to not use this one till v1.0. I'll release it in August 2022 with min 10 Components.
+<p>This is a under development project. So, I request everyone to not use this one till v1.0. I'll release it in August 2022 with minimum ten components.
 I'm open to ideas and help.
 </p>
 <p>
