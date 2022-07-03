@@ -16,8 +16,10 @@
 	style={props.style}
 	props
 	on:click
+	on:*
 >
 	{label}
+	<slot />
 </button>
 
 <style>
