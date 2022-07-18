@@ -1,29 +1,27 @@
 <script lang="ts">
-	import Button from '../lib/components/Button/Button.svelte';
-	import Card from '../lib/components/Card/Card.svelte';
-	import ResponsiveCard from "../lib/components/Card/ResponsiveCard.svelte";
-</script>
+	import Button from '$lib/components/Button/Button.svelte';
+	import { ArrowRight } from "svelte-heros";
+	let variants = ['solid', 'outlined', 'soft'];
+	let colors = ['primary', 'secondary', 'tertiary', 'dark', 'info', 'warning', 'danger', 'success'];
 
-<div class="h-screen bg-gray-200">
-	<Button label="" class="m-4 text-2xl rounded-3xl hover:bg-indigo-800 bg-indigo-200" outline
-		>Hiii</Button
-	>
-	<ResponsiveCard>
-	<Card class="bg-green-300">
-		<div class="mb-12 space-y-4">
-			<h3 class="text-2xl font-semibold text-purple-900">Graphic Design</h3>
-			<p class="mb-6">Obcaecati, quam? Eligendi, nulla numquam natus laborum porro at cum, consectetur ullam tempora ipsa iste officia sed officiis! Incidunt ea animi officiis.</p>
-			<a href="/" class="block font-medium text-purple-600">Know more</a>
-		</div>
-	</Card>
-	<Card class="bg-indigo-400 mt-1 px-5" noPadding>
-		<div class="text-white">hiii</div>
-	</Card>
-		<Card class="bg-indigo-400 mt-1 px-5" noPadding>
-			<div class="text-white">hiii</div>
-		</Card>
-		<Card class="bg-indigo-400 mt-1 px-5" noPadding>
-			<div class="text-white">hiii</div>
-		</Card>
-	</ResponsiveCard>
-</div>
+</script>
+<section>
+	<div class="grid items-center space-y-14 p-20">
+		{#each variants as variant}
+			<div class="">
+				<h1
+					class="mb-5 text-3xl font-bold px-4 py-2 w-max rounded-full text-black capitalize bg-warning-700/70"
+				>
+					{variant} Buttons
+				</h1>
+				<div class="flex space-x-2">
+				{#each colors as color}
+					<Button class="capitalize drop-shadow-md" {variant} {color} shadow>{color} <ArrowRight size="18" class="inline-flex items-center justify-center w-4 h-4 ml-2 rounded-full" /></Button>
+				{/each}
+				</div>
+			</div>
+		{/each}
+	</div>
+</section>
+
+

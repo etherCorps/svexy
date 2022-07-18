@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
-	import Button from '../../svexy-ui/components/Button/Button.svelte';
 </script>
 
-<slot />
+<div class="bg-white w-full h-3/5">
+	<slot />
+</div>

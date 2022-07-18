@@ -6,9 +6,11 @@
 		withPadding = false;
 	}
 </script>
-		<div class="rounded-2xl shadow-xl {props.class}" class:noPadding class:withPadding>
-			<slot />
-		</div>
+
+<div class="rounded-2xl shadow-xl {props.class}" class:noPadding class:withPadding>
+	<slot />
+</div>
+
 <style>
 	.noPadding {
 		@apply px-1 py-2;

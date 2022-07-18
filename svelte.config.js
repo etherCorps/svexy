@@ -14,15 +14,7 @@ const config = {
 		package: {
 			dir: 'svexy-ui'
 		},
-		adapter: adapter(),
-		vite: {
-			server: {
-				port: 4000,
-				fs: {
-					allow: ['svexy-ui']
-				}
-			}
-		}
+		adapter: adapter()
 	}
 };
 
