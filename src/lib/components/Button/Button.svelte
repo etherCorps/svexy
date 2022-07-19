@@ -91,7 +91,9 @@
 </script>
 
 {#if href}
-	<a {href} {prop}><button type="button" {disabled} class={buttonClasses} {prop}><slot /></button></a>
+	<a {href} {prop}
+		><button type="button" {disabled} class={buttonClasses} {prop} on:click><slot /></button></a
+	>
 {:else}
-	<button type="button" {disabled} class={buttonClasses}><slot /></button>
+	<button type="button" {disabled} class={buttonClasses} {prop} on:click><slot /></button>
 {/if}

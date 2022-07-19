@@ -13,7 +13,9 @@ It's a Svelete Component Library which is built using Tailwind CSS. This UI Libr
 This is my first open source package. So please help me to make it best UI Library for Svelte. Everyone is invite to play and help me build this.
 
 ## Getting started
-- Add following lines into your tailwind config 
+
+- Add following lines into your tailwind config
+
 ```javascript
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors.js');
@@ -37,13 +39,16 @@ module.exports = {
 	plugins: []
 };
 ```
+
 - Do not change variable names.
 - You can config all the color as per your need but have to follow this method
 
 ## How to use Button
+
 - let variants = ['solid', 'outlined', 'soft'] : 'solid' is default.
 - let colors = ['primary', 'secondary', 'tertiary', 'dark', 'info', 'warning', 'danger', 'success'] : 'primary' is default.
 - let sizes = ['xs', 'sm', 'md', 'lg', 'xl'] : 'md' is default.
+
 ```javascript
 let variants = ['solid', 'outlined', 'soft'];
 let colors = ['primary', 'secondary', 'tertiary', 'dark', 'info', 'warning', 'danger', 'success'];
@@ -52,6 +57,7 @@ let colors = ['primary', 'secondary', 'tertiary', 'dark', 'info', 'warning', 'da
 </script>
 <Button variant={variant} color={color} shadow >Button<Button/>
 ```
+
 - Pass `pill` if want to rounded.
 - Pass `shadow` if need shadow of same color.
 - Pass `href` for `<a>` tag.
