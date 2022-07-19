@@ -14,8 +14,8 @@ module.exports = {
 			primary: colors.sky,
 			secondary: colors.violet,
 			tertiary: colors.rose
-		}
+		},
+		extend: {}
 	},
-	extend: {},
 	plugins: []
 };

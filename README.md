@@ -20,7 +20,10 @@ This is my first open source package. So please help me to make it best UI Libra
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors.js');
 module.exports = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		'./node_modules/svexy-ui/components/**/*.{html,js,svelte,ts}'
+	],
 	theme: {
 		colors: {
 			gray: colors.gray,
@@ -33,9 +36,9 @@ module.exports = {
 			primary: colors.orange,
 			secondary: colors.violet,
 			tertiary: colors.rose
-		}
+		},
+		extend: {}
 	},
-	extend: {},
 	plugins: []
 };
 ```

@@ -15,8 +15,7 @@
 		| 'success' = 'primary';
 	export let shadow: boolean = false;
 	export let disabled: boolean = false;
-	$: prop = { ...$$restProps };
-
+	const comProps = {...$$restProps}
 	const colorClasses = {
 		solid: {
 			primary: 'text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-200',
@@ -91,9 +90,11 @@
 </script>
 
 {#if href}
-	<a {href} {prop}
-		><button type="button" {disabled} class={buttonClasses} {prop} on:click><slot /></button></a
+	<a {href} {...$$restProps}
+		><button {...$$restProps} {disabled} class={buttonClasses} on:click
+			><slot /></button
+		></a
 	>
 {:else}
-	<button type="button" {disabled} class={buttonClasses} {prop} on:click><slot /></button>
+	<button type="button" {...$$restProps} {disabled} class={buttonClasses}  on:click><slot /></button>
 {/if}
