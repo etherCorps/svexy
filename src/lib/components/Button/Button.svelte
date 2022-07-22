@@ -15,17 +15,17 @@
 		| 'success' = 'primary';
 	export let shadow: boolean = false;
 	export let disabled: boolean = false;
-	const comProps = {...$$restProps}
+	const comProps = { ...$$restProps };
 	const colorClasses = {
 		solid: {
 			primary: 'text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-200',
 			secondary: 'text-white bg-secondary-700 hover:bg-secondary-800 focus:ring-secondary-200',
-			tertiary: 'text-white bg-tertiary-700 hover:bg-tertiary-800 focus:ring-tertiary-100',
-			dark: 'text-white bg-gray-700 hover:bg-gray-800 focus:ring-gray-100',
-			info: 'text-white bg-info-700 hover:bg-info-800 focus:ring-info-100',
-			success: 'text-white bg-success-700 hover:bg-success-800 focus:ring-success-100',
-			warning: 'text-white bg-warning-700 hover:bg-warning-800 focus:ring-warning-100',
-			danger: 'text-white bg-danger-700 hover:bg-danger-800 focus:ring-danger-100'
+			tertiary: 'text-white bg-tertiary-700 hover:bg-tertiary-800 focus:ring-tertiary-200',
+			dark: 'text-white bg-gray-700 hover:bg-gray-800 focus:ring-gray-200',
+			info: 'text-white bg-info-700 hover:bg-info-800 focus:ring-info-200',
+			success: 'text-white bg-success-700 hover:bg-success-800 focus:ring-success-200',
+			warning: 'text-white bg-warning-700 hover:bg-warning-800 focus:ring-warning-200',
+			danger: 'text-white bg-danger-700 hover:bg-danger-800 focus:ring-danger-200'
 		},
 		outlined: {
 			primary:
@@ -45,18 +45,19 @@
 		},
 		soft: {
 			primary:
-				'text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-200 brightness-150',
+				'bg-primary-300 text-gray-800 hover:bg-primary-800 hover:text-white focus:ring-primary-200',
 			secondary:
-				'text-white bg-secondary-700/80 hover:bg-secondary-800 focus:ring-secondary-200 brightness-150',
+				'bg-secondary-300 text-gray-800 hover:bg-secondary-800 hover:text-white focus:ring-secondary-200',
 			tertiary:
-				'text-white bg-tertiary-700/80 hover:bg-tertiary-800 focus:ring-tertiary-100 brightness-150',
-			dark: 'text-white bg-gray-700/80 hover:bg-gray-800 focus:ring-gray-100 brightness-150',
-			info: 'text-white bg-info-700/80 hover:bg-info-800 focus:ring-info-100 brightness-150',
+				'bg-tertiary-300 text-gray-800 hover:bg-tertiary-800 hover:text-white focus:ring-tertiary-100',
+			dark: 'bg-gray-300 text-gray-800 hover:bg-gray-800 hover:text-white focus:ring-gray-100',
+			info: 'bg-info-300 text-gray-800 hover:bg-info-800 hover:text-white focus:ring-info-100',
 			success:
-				'text-white bg-success-700/80 hover:bg-success-800 focus:ring-success-100 brightness-150',
+				'bg-success-300 text-gray-800 hover:bg-success-800 hover:text-white focus:ring-success-100',
 			warning:
-				'text-white bg-warning-700/80 hover:bg-warning-800 focus:ring-warning-100 brightness-150',
-			danger: 'text-white bg-danger-700/80 hover:bg-danger-800 focus:ring-danger-100 brightness-150'
+				'bg-warning-300 text-gray-800 hover:bg-warning-800 hover:text-white focus:ring-warning-100',
+			danger:
+				'bg-danger-300 text-gray-800 hover:bg-danger-800 hover:text-white focus:ring-danger-100'
 		}
 	};
 
@@ -77,7 +78,7 @@
 		lg: 'px-5 py-3 text-base',
 		xl: 'px-6 py-3.5 text-base'
 	};
-
+'active:text-primary-700 active:border active:border-2 active:border-primary-700'
 	$: buttonClasses = classNames(
 		'group text-center font-medium focus:ring-2 focus:outline-none ease-in-out transition-all flex items-center',
 		colorClasses[variant][color],
@@ -85,16 +86,14 @@
 		shadow && variant != 'soft' && shadowClasses[color],
 		pill ? 'rounded-full' : 'rounded-md',
 		$$props.class,
-		disabled && 'cursor-not-allowed opacity-50'
+		disabled && 'cursor-not-allowed opacity-50',
 	);
 </script>
 
 {#if href}
 	<a {href} {...$$restProps}
-		><button {...$$restProps} {disabled} class={buttonClasses} on:click
-			><slot /></button
-		></a
+		><button {...$$restProps} {disabled} class={buttonClasses} on:click><slot /></button></a
 	>
 {:else}
-	<button type="button" {...$$restProps} {disabled} class={buttonClasses}  on:click><slot /></button>
+	<button type="button" {...$$restProps} {disabled} class={buttonClasses} on:click><slot /></button>
 {/if}
