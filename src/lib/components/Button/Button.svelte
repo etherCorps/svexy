@@ -78,7 +78,7 @@
 		lg: 'px-5 py-3 text-base',
 		xl: 'px-6 py-3.5 text-base'
 	};
-'active:text-primary-700 active:border active:border-2 active:border-primary-700'
+	('active:text-primary-700 active:border active:border-2 active:border-primary-700');
 	$: buttonClasses = classNames(
 		'group text-center font-medium focus:ring-2 focus:outline-none ease-in-out transition-all flex items-center',
 		colorClasses[variant][color],
@@ -86,7 +86,7 @@
 		shadow && variant != 'soft' && shadowClasses[color],
 		pill ? 'rounded-full' : 'rounded-md',
 		$$props.class,
-		disabled && 'cursor-not-allowed opacity-50',
+		disabled && 'cursor-not-allowed opacity-50'
 	);
 </script>
 

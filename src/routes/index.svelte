@@ -1,7 +1,7 @@
 <script lang="ts">
-	// import Button from 'svexy-ui'
-	import Button from '$lib/components/Button/Button.svelte';
+	import { Button } from '$lib';
 	import { ArrowRight } from 'svelte-heros';
+
 	let variants = ['solid', 'outlined', 'soft'];
 	let colors = ['primary', 'secondary', 'tertiary', 'dark', 'info', 'warning', 'danger', 'success'];
 </script>
@@ -30,3 +30,5 @@
 		{/each}
 	</div>
 </section>
+
+<!--<Avatar name="John Walker" src="https://avatars0.githubusercontent.com/u/6810985?s=460&u=a2a24f33ad8d17377cef8163f596a7fbd1501cd4&v=4" />-->
